@@ -20,6 +20,7 @@ async function run() {
         const cursor = serviceCollection.find(query);
         const services = await cursor.toArray();
         res.send(services)
+        console.log("added service");
       })
       app.get('/service/:id',async(req, res)=>{
           const id= req.params.id;
@@ -42,7 +43,7 @@ run().catch(console.dir);
 
 
 app.get('/', (req, res) => {
-    res.send('running server')
+    res.send('ginius car service running server')
 })
 app.listen(port, () => {
     console.log('listening to port');
