@@ -20,7 +20,6 @@ async function run() {
         const cursor = serviceCollection.find(query);
         const services = await cursor.toArray();
         res.send(services)
-        console.log("added service");
       })
       app.get('/service/:id',async(req, res)=>{
           const id= req.params.id;
