@@ -12,6 +12,7 @@ app.use(express.json());
 
 const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.Db_PASS}@cluster0.7vqqp.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
+console.log(uri);
 async function run() {
     try {
         await client.connect();const serviceCollection = client.db('geniusCar').collection('service');
